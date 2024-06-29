@@ -1,0 +1,23 @@
+<div class="add-event-container">
+    <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()" class="add-event-form">
+      <h2>Add Event</h2>
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input id="eventName" formControlName="EventName" type="text">
+      </div>
+      <div class="form-group">
+        <label for="eventCapacity">Event Capacity</label>
+        <input id="eventCapacity" formControlName="EventCapacity" type="number">
+      </div>
+      <div class="form-group">
+        <label for="eventDate">Event Date</label>
+        <input id="eventDate" formControlName="EventDate" type="date">
+      </div>
+      <div class="form-group">
+        <label for="eventLocation">Event Location</label>
+        <input id="eventLocation" formControlName="EventLocation" type="text">
+      </div>
+      <button type="submit" [disabled]="addEventForm.invalid">Add Event</button>
+    </form>
+  </div>
+  

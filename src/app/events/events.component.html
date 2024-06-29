@@ -1,0 +1,16 @@
+<div class="events-container">
+  <h2>Events</h2>
+  <ul class="events-list">
+    <li *ngFor="let event of events" (click)="goToEvent(event.EventId)">
+      <h3>{{ event.EventName }}</h3>
+      <p>{{ event.EventDescription }}</p>
+      <p><strong>Date:</strong> {{ event.EventDate }}</p>
+      <p><strong>Location:</strong> {{ event.EventLocation }}</p>
+    </li>
+  </ul>
+  <div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
